@@ -11,4 +11,14 @@ def reconstruct_trip(tickets, length):
     """
     # Your code here
 
+    Dict_tickets = {}
+    for ticket in tickets:
+        Dict_tickets[ticket.source] = ticket.destination
+    route = []
+    s = Dict_tickets['NONE']
+    route.append(s)
+    while s != 'NONE':
+        s = Dict_tickets[s]
+        route.append(s)
+
     return route
