@@ -4,6 +4,18 @@ def intersection(arrays):
     """
     # Your code here
 
+    storage = {}
+    for idx in arrays:
+        for i in idx:
+            if i not in storage:
+                storage[i] = 0
+            else:
+                storage[i] += 1
+    result = []
+    for key in storage:
+        if storage[key] == len(arrays) - 1:
+            result.append(key)
+
     return result
 
 
